@@ -1,5 +1,5 @@
 # What does this piece of code do?
-# Answer: 
+# Answer: print a random prime number between 1 and 100 
 
 # Import libraries
 # randint allows drawing a random number, 
@@ -15,10 +15,10 @@ while p==False:
     p=True
     n = randint(1,100)
     u = ceil(n**(0.5))
+#loop if i is in range(2,u+1) and n%i=0
     for i in range(2,u+1):
         if n%i == 0:
             p=False
-
 
      
 print(n)
