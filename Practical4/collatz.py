@@ -5,7 +5,7 @@ Created on Wed Mar 13 10:02:08 2019
 @author: alvaq
 """
 #start with a positive interger
-n=6
+n=int(input())
 #repeat the sequence until it reaches 1 for the first time
 while n!=1:
 #n=n/2 if n is even
