@@ -18,10 +18,12 @@ while x>0:
     while a<=x:
         a=a*2
         k=k+1
-#print the exponent in the result
+#print the exponent in the result and refresh x
     k=k-1
     x=x-a/2
     if r!=0:
         r=r+"2**"+str(k)+"+"
+#remove the "+" at the end of the result
+r1=r[:-1]
 #print the final result
-print(r)
+print(r1)
