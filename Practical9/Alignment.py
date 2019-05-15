@@ -29,8 +29,8 @@ def blosum(a,b):
     return score
 
 #compare human seq with mouse seq
-scr1=0
-perc1=0
+scr1=0 #varialbe for BLOSUM score
+perc1=0 #variable for percentage identity
 for i in range(len(SOD2_human_seq)):
     scr=blosum(SOD2_human_seq[i],SOD2_mouse_seq[i])
     if SOD2_human_seq[i]==SOD2_mouse_seq[i]:
@@ -63,19 +63,12 @@ print("The final BLOSUM score for human and mouse is "+str(scr1)+".\nThe final B
 #print out the percentage identity
 print("The percentage identity for human and mouse is "+str(perc_1)+".\n"+"The percentage identity for human and random is "+str(perc_2)+".\n"+"The percentage identity for mouse and random is "+str(perc_3)+".")
 
-#bonus project
-from Bio import pairwise2
-from Bio.pairwise2 import format_alignment
-for a in pairwise2.align.globaldx(SOD2_human_seq, SOD2_mouse_seq, BLOSUM62):
-    print(format_alignment(*a))
-for a in pairwise2.align.globaldx(SOD2_human_seq, random_seq, BLOSUM62):
-    print(format_alignment(*a))
-for a in pairwise2.align.globaldx(SOD2_mouse_seq, random_seq, BLOSUM62):
-    print(format_alignment(*a))
-    
-
-
-    
-#human_seql=list(SOD2_human_seq)
-#mouse_seql=list(SOD2_mouse_seq)
-#random_seql=list(random_seq)
+##for bonus project
+#from Bio import pairwise2
+#from Bio.pairwise2 import format_alignment
+#for a in pairwise2.align.globaldx(SOD2_human_seq, SOD2_mouse_seq, BLOSUM62):
+#    print(format_alignment(*a))
+#for a in pairwise2.align.globaldx(SOD2_human_seq, random_seq, BLOSUM62):
+#    print(format_alignment(*a))
+#for a in pairwise2.align.globaldx(SOD2_mouse_seq, random_seq, BLOSUM62):
+#    print(format_alignment(*a))
