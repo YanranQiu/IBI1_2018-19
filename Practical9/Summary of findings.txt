@@ -1,0 +1,9 @@
+The final BLOSUM score for mouse human comparison is 1091.
+The final BLOSUM score for mouse random seq comparison is -250.
+The final BLOSUM score for human random seq comparison is -250.
+The normalized BLOSUM score for human and mouse is 4.914414414414415.
+The normalized BLOSUM score for human and random is -1.1261261261261262.
+The normalized BLOSUM score for mouse and random is -1.1261261261261262.
+The percentage identity for mouse human comparison is 0.8963963963963963.
+The percentage identity for mouse random seq comparison is 0.05855855855855856.
+The percentage identity for human random seq comparison is 0.05405405405405406.
