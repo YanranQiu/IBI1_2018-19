@@ -1,0 +1,1 @@
+If the numbers cannot produce 24, the complexity estimation for the python script is approximately 6^(n-1).
