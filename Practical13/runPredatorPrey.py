@@ -94,6 +94,6 @@ plt.title('limit cycle')
 #import xml.dom.minidom
 #create a DOMTree
 
-
-
+#run simulation many times
+#find the maximum number of predator
 
