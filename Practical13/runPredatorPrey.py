@@ -7,14 +7,14 @@ Created on Wed May 15 09:01:48 2019
 
 #import libraries
 import os #access operating system from within python
-os.chdir()
+#os.chdir()
 import matplotlib.pyplot as plt
 import xml.dom.minidom
+import numpy as np
+import re
 
 #define function to convert the .xml file into a .cps file in the same directory (provided by Melanie)
 def xml_to_cps():
-    import os
-    import xml.dom.minidom
     
     # first, convert xml to cps 
     os.system("CopasiSE.exe -i predator-prey.xml -s predator-prey.cps")
@@ -61,4 +61,31 @@ def xml_to_cps():
     cpsFile.close()
 
 
+os.system("CopasiSE.exe -i predator-prey.xml -s predator-prey.cps")
+os.system("CopasiSE.exe predator-prey.cps")
+resultsl=[]
+with open('modelResults.csv', 'r') as cpsfile:
+    cpsfile=cpsfile.read()
+    cpscontent=re.split('\n',cpsfile)
+    #make an array for variable names
+    names=np.array(cpscontent[0])
+    print(names)
+    #resultss=np.array(cpscontent[1:])
+    for i in range(1,len(cpscontent)-1):
+        results=re.split(',',cpscontent[i])
+        resultsl.append(results)
+    results=np.array(resultsl)
 
+plt.figure(figsize=(6,4),dpi=150)
+plt.plot(results[:,1])
+plt.plot(results[:,2])
+plt.xlabel('time')
+plt.ylabel('population size')
+plt.title('Time course')
+plt.legend(loc='upper right')
+
+plt.figure(figsize=(6,4),dpi=150)
+plt.plot(results[:,1],results[:,2])
+plt.xlabel('predator population')
+plt.ylabel('prey population')
+plt.title('limit cycle')
