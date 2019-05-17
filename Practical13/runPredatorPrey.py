@@ -77,8 +77,8 @@ with open('modelResults.csv', 'r') as cpsfile:
     results=np.array(resultsl)
 
 plt.figure(figsize=(6,4),dpi=150)
-plt.plot(results[:,1])
-plt.plot(results[:,2])
+plt.plot(results[:,1],label='predator (b=0.02,d=0.4)')
+plt.plot(results[:,2],label='prey (b=0.1,d=0.02)')
 plt.xlabel('time')
 plt.ylabel('population size')
 plt.title('Time course')
@@ -89,3 +89,11 @@ plt.plot(results[:,1],results[:,2])
 plt.xlabel('predator population')
 plt.ylabel('prey population')
 plt.title('limit cycle')
+
+#change values
+#import xml.dom.minidom
+#create a DOMTree
+
+
+
+
